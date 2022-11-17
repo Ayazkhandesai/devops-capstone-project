@@ -15,7 +15,9 @@ def request_validation_error(error):
     """Handles Value Errors from bad data"""
     return bad_request(error)
 
-
+######################################################################
+#  BAD REQUEST ERROR
+######################################################################
 @app.errorhandler(status.HTTP_400_BAD_REQUEST)
 def bad_request(error):
     """Handles bad requests with 400_BAD_REQUEST"""
@@ -27,7 +29,9 @@ def bad_request(error):
         ),
         status.HTTP_400_BAD_REQUEST,
     )
-
+######################################################################
+#  ERROR NOT FOUND
+######################################################################
 
 @app.errorhandler(status.HTTP_404_NOT_FOUND)
 def not_found(error):
@@ -35,7 +39,9 @@ def not_found(error):
     message = str(error)
     app.logger.warning(message)
     return (
-        jsonify(status=status.HTTP_404_NOT_FOUND, error="Not Found", message=message),
+        jsonify(
+            status=status.HTTP_404_NOT_FOUND, error="Not Found", message=message
+            ),
         status.HTTP_404_NOT_FOUND,
     )
 
