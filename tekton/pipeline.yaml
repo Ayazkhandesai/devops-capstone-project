@@ -12,9 +12,10 @@ spec:
   workspaces:
     - name: pipeline-workspace
   params:
+    - name: build-image
     - name: repo-url
     - name: branch
-    - name: build-image
+    
       default: main
   tasks:
     - name: lint
