@@ -15,7 +15,6 @@ spec:
     - name: repo-url
     - name: branch
     - name: build-image
-    
       default: main
   tasks:
     - name: lint
